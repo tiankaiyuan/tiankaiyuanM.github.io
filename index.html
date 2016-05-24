@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>田凯远</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">-->
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery-2.2.3.min.js"></script>
+    <script src="lib/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body ng-app="introduce" ng-controller="intCtrl">
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">田凯远</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" data-toggle="modal" data-target="#myModal">简介</a></li>
+                <li><a href="#">技能</a></li>
+                <li><a href="#">项目</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+    <h3 class="margin">我是谁?</h3>
+    <img src="images/bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+    <h3><button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">一个拥有梦想的人</button></h3>
+</div>
+<!--modal-->
+<div class="modal fade" id="myModal" role="dialog" style="color:black">
+    <div class="modal-dialog modal-lg">
+        <!-- modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">简介</h4>
+            </div>
+            <div class="modal-body">
+                <p ng-repeat="item in myInfos">{{item}}</p>
+            </div>
+            <div class="modal-footer">
+                <button class="close" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center" >
+    <div class="row">
+        <div class="col-sm-4">
+            <h3 class="margin">我会什么</h3>
+            <div class="myList" style="color:black">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="item in TCitems">{{item}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <h3 class="margin">我能做什么</h3>
+            <div class="myList" style="color:black">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="item in Doitems">{{item}}</li>
+                </ul>
+            </div>
+            <!--<a href="#" class="btn btn-default btn-lg">-->
+                <!--<span class="glyphicon glyphicon-search"></span> Search-->
+            <!--</a>-->
+        </div>
+        <div class="col-sm-4">
+            <h3 class="margin">我的优势</h3>
+            <div id="myList" style="color:black">
+                <ul class="list-group">
+                    <li class="list-group-item " ng-repeat="item in ADitems">{{item}}</li>
+                </ul>
+                <!--<div class="input-group">-->
+                    <!--<input class="form-control" ng-model="infoText">-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+    <h3 class="margin">更多信息</h3><br>
+    <div class="row">
+        <div class="col-sm-4 p1">
+            <p>项目1</p>
+            <a href="#" class="p1">
+                <img src="images/1.png" class="img-responsive margin p-img" style="width:100%;height:100%" alt="Image">
+                <div class="Pcontext">
+                    <p ng-repeat="item in projInfos1">{{item}}</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4  ">
+            <p>项目2</p>
+            <a href="#" class="p2">
+                <img src="images/2.png" class="img-responsive margin p-img" style="width:100%" alt="Image">
+                <div class="Pcontext">
+                    <p ng-repeat="item in projInfos2">{{item}}</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-4 ">
+            <p>项目3</p>
+            <a href="#" class="p3">
+                <img src="images/3.png" class="img-responsive margin p-img" style="width:100%;height:auto" alt="Image">
+                <div class="Pcontext">
+                    <p ng-repeat="item in projInfos3">{{item}}</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+    <p> 我的博客 <a href="http://www.w3schools.com">www.w3schools.com</a></p>
+</footer>
+
+</body>
+</html>
